@@ -12,7 +12,7 @@ class Game:
     def __init__(self): 
 
         pygame.mouse.set_visible(False)
-        self.custom_cursor = pygame.image.load('assets/rocket.png')
+        self.custom_cursor = pygame.image.load('assets/aim.png')
         self.custom_cursor = pygame.transform.scale(self.custom_cursor, (50, 50))
         self.game_state = 'MENU'
 
@@ -94,7 +94,7 @@ class Game:
 
                 self.game_state = 'PLAYING'
                 self.trees_num = 3
-                self.cross_num = 4
+                self.monster_num = 4
                 self.stars_num = 2
                 self.heart_num = 1
                 self.points = 0
@@ -152,7 +152,6 @@ class Game:
         self.screen.blit(score_text, (150, 20))
         self.screen.blit(lives_text, (320, 20))
 
-
     def draw_titles(self, text, font_size, position, color_font, color_shadow):
 
         font = pygame.font.Font(None, font_size)
@@ -205,7 +204,7 @@ class Game:
                 self.max_objects += 4
 
             if(self.level_game > 6): 
-                self.cross_num += 3
+                self.monster_num += 3
 
             if(self.level_game > 8): 
                 self.heart_num += 1
@@ -233,7 +232,7 @@ class Game:
                 self.draw_titles('Press SPACE for start ...', 80, (self.width // 2 - 250, 400), (255, 255, 0), (128, 0, 128))
             
             elif(self.game_state == 'PLAYING'): 
-                
+
                 self.screen.fill((0, 0, 0))
                 self.update_game()
                 self.draw_objects()
@@ -241,13 +240,12 @@ class Game:
 
             elif(self.game_state == 'GAME OVER'): 
                 
-
                 self.draw_background_image('assets/1280x720_game-over-4k.jpg')
                 self.draw_titles('Press R to restart ...', 40, (self.width // 2 - 50, 500), (255, 255, 255), (128, 0, 128))
 
 
             mouse_x, mouse_y = pygame.mouse.get_pos()
-            self.screen.blit(self.custom_cursor, (mouse_x, mouse_y))
+            self.screen.blit(self.custom_cursor, (mouse_x - self.custom_cursor.get_width() // 2, mouse_y - self.custom_cursor.get_width() // 2))
 
             pygame.display.flip()
             pygame.time.Clock().tick(60)
