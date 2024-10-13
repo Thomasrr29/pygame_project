@@ -20,8 +20,7 @@ class GameObject :
     def updatePosition(self, width, height): 
         self.rect.x = random.randint(0, width)
         self.rect.y = random.randint(0, height)
-
-    
+  
 class Tree(GameObject): 
 
     def __init__(self, image_path):
@@ -31,23 +30,18 @@ class Tree(GameObject):
 
     def on_click(self):
 
-        self.points = 1
         return self.points
 
-
-class Cross(GameObject): 
+class Monster(GameObject): 
 
     def __init__(self, image_path):
         super().__init__(image_path, points=-30)
         self.lives_impact = -1
-        self.spawn_time_cross = time.time()
+        self.spawn_time_monster = time.time()
 
     def on_click(self):
-        
-      
 
         return self.points, self.lives_impact
-
 
 class Star(GameObject): 
 
@@ -59,4 +53,23 @@ class Star(GameObject):
 
     def on_click(self):
         return self.bonus_points
+
+class BossMonster(GameObject): 
+    def __init__(self, image_path):
+        super().__init__(image_path, points=-100)
+
+        self.boss_spawn_time = time.time()
+
+    def on_click(self): 
+
+        return self.points
+
+class Heart(GameObject): 
     
+    def __init__(self, image_path):
+        super().__init__(image_path, points=0)
+        self.lives = 1
+        self.heart_spawn_time = time.time()
+    
+    def on_click(self): 
+        return self.points, self.lives     
