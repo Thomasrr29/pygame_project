@@ -4,7 +4,7 @@
 
 **Reaction Game** es un juego diseñado para **mejorar la atención, la velocidad de reacción y la coordinación mano-ojo**. Ideal para prepararse antes de una sesión de videojuegos o simplemente para entrenar la mente de forma divertida y dinámica.
 
-Este juego pone a prueba tu capacidad de reacción mientras evitas objetos peligrosos y recolectas bonificaciones. A medida que avanzas, la dificultad aumenta, retándote a mantener la concentración. ¡Es una forma excelente de **entrenar tus reflejos y mejorar tu rendimiento** en otros videojuegos!
+Este juego pone a prueba tu capacidad de reacción mientras evitas objetos peligrosos y recolectas bonificaciones dando click a los diferentes objetos. A medida que avanzas, la dificultad aumenta, retándote a mantener la concentración. ¡Es una forma excelente de **entrenar tus reflejos y mejorar tu rendimiento** en otros videojuegos!
 
 ## Características Principales
 
@@ -45,7 +45,7 @@ Clona este proyecto a tu máquina local:
 bash: 
 
 git clone https://github.com/Thomasrr29/pygame_project.git
-cd pygame
+cd pygame_project
 
 
 ## Ejecutar el juego:
