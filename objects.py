@@ -18,8 +18,8 @@ class GameObject :
         return self.rect.collidepoint(mouse_position)
     
     def updatePosition(self, width, height): 
-        self.rect.x = random.randint(0, width)
-        self.rect.y = random.randint(0, height)
+        self.rect.x = random.randint(0, width - self.rect.width)
+        self.rect.y = random.randint(0, height - self.rect.height)
   
 class Tree(GameObject): 
 
